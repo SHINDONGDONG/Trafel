@@ -38,7 +38,7 @@
         <!--View Controller-->
         <scene sceneID="wlp-zo-UCh">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="hmr-AY-Mwh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingViewController" modalPresentationStyle="fullScreen" id="hmr-AY-Mwh" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d3r-wn-sgL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,21 +93,27 @@
             </objects>
             <point key="canvasLocation" x="-775" y="119"/>
         </scene>
-        <!--Item 2-->
+        <!--Settings View Controller-->
         <scene sceneID="LMP-Iv-1rg">
             <objects>
-                <viewController id="4Hc-n7-c7X" sceneMemberID="viewController">
+                <viewController id="4Hc-n7-c7X" customClass="SettingsViewController" customModule="Trafel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ItV-M7-5Ac">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="pnS-Y9-SbZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="02H-5Q-ZUb"/>
+                    <navigationItem key="navigationItem" id="GI6-K4-E2s">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="ay2-OT-8zf">
+                            <connections>
+                                <action selector="logoutButtonTapped:" destination="4Hc-n7-c7X" id="sA9-td-BhH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ark-xr-YbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="423"/>
+            <point key="canvasLocation" x="1805.7971014492755" y="466.74107142857139"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="sgC-ND-Au0">
@@ -136,12 +142,31 @@
                     </tabBar>
                     <connections>
                         <segue destination="y4H-7y-o8E" kind="relationship" relationship="viewControllers" id="jqM-oO-RdV"/>
-                        <segue destination="4Hc-n7-c7X" kind="relationship" relationship="viewControllers" id="w0M-dn-lVd"/>
+                        <segue destination="0gr-7i-cE7" kind="relationship" relationship="viewControllers" id="w0M-dn-lVd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VS9-O0-jFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="68" y="106"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="3c6-cb-f98">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYF-cn-bKP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0gr-7i-cE7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 2" id="02H-5Q-ZUb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JzJ-e7-hSd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4Hc-n7-c7X" kind="relationship" relationship="rootViewController" id="ia4-fA-O6b"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="895.6521739130435" y="466.74107142857139"/>
         </scene>
     </scenes>
     <resources>
