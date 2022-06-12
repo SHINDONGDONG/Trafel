@@ -10,7 +10,7 @@ import UIKit
 class LoadingViewController: UIViewController {
  
     // MARK: - Properties
-    private var isUserLoggedIn = true
+    private var isUserLoggedIn = true 
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -20,9 +20,8 @@ class LoadingViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //DispatchQueue로 비동기인데 딜레이를 준다. 2초동안 뺑글이돌고
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            //showInitialView를 실행시킨다.
+        //helper에서 만들었던 delay 메서드
+        delay(durationInSeconds: 2.0) {
             self.showInitialView()
         }
     }
@@ -30,11 +29,6 @@ class LoadingViewController: UIViewController {
     // MARK: - Configures
     
     func configures() {
-        setupView()
-    }
-    
-    private func setupView() {
-        view.backgroundColor = .orange
     }
     
     private func showInitialView(){
@@ -43,7 +37,7 @@ class LoadingViewController: UIViewController {
         
         if isUserLoggedIn {
             //MainTabBarController를 만들어준다.
-            let mainTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier:"MainTabBarViewController")
+            let mainTabBarController = UIStoryboard(name: K.StoryboardID.main, bundle: nil).instantiateViewController(identifier:K.StoryboardID.mainTabBarController)
             
             if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
                 let window = sceneDelegate.window {
@@ -52,7 +46,7 @@ class LoadingViewController: UIViewController {
             
         }else {
             //지정해둔 identifier를 이용해서 화면을보내준다.
-            performSegue(withIdentifier: "showOnboarding", sender: nil)
+            performSegue(withIdentifier: K.Segue.showOnboardingScreen, sender: nil)
         }
          
     }
