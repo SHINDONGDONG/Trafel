@@ -10,7 +10,7 @@ import UIKit
 class LoadingViewController: UIViewController {
  
     // MARK: - Properties
-    private var isUserLoggedIn = false
+    private var isUserLoggedIn = true
     
     // MARK: - Init
     override func viewDidLoad() {
