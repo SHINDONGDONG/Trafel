@@ -16,19 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imBalloon" translatesAutoresizingMaskIntoConstraints="NO" id="bXb-Er-hYF">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imBalloon" translatesAutoresizingMaskIntoConstraints="NO" id="IJO-ts-lUW">
                                 <rect key="frame" x="87" y="328" width="240" height="240"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="S7I-bS-KFT"/>
-                                    <constraint firstAttribute="height" constant="240" id="ykN-ya-eHs"/>
+                                    <constraint firstAttribute="width" constant="240" id="7VV-Nc-MTt"/>
+                                    <constraint firstAttribute="height" constant="240" id="Cob-ib-6CD"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bXb-Er-hYF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mrI-8z-n6k"/>
-                            <constraint firstItem="bXb-Er-hYF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tgG-zk-82p"/>
+                            <constraint firstItem="IJO-ts-lUW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="AqA-fn-BpR"/>
+                            <constraint firstItem="IJO-ts-lUW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QXD-ac-SNZ"/>
                         </constraints>
                     </view>
                 </viewController>

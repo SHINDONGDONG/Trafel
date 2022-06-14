@@ -18,6 +18,8 @@
 		9BB7390F28550BB000EF868F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB7390E28550BB000EF868F /* LoadingViewController.swift */; };
 		9BB739122856106100EF868F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB739112856106100EF868F /* Helper.swift */; };
 		9BB73914285611B900EF868F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB73913285611B900EF868F /* Constants.swift */; };
+		9BFE67B328593941002FEE00 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE67B228593941002FEE00 /* Slide.swift */; };
+		9BFE67B628593D2B002FEE00 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE67B528593D2B002FEE00 /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		9BB7390E28550BB000EF868F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		9BB739112856106100EF868F /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		9BB73913285611B900EF868F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9BFE67B228593941002FEE00 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		9BFE67B528593D2B002FEE00 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 		9BB738F82855058A00EF868F /* Trafel */ = {
 			isa = PBXGroup;
 			children = (
+				9BFE67B428593CFA002FEE00 /* views */,
+				9BFE67B128593936002FEE00 /* models */,
 				9B27C9752858CE380005ABF2 /* Manager */,
 				9BB739102856105400EF868F /* helper */,
 				9BB7390D28550B9000EF868F /* Controllers */,
@@ -104,6 +110,22 @@
 				9BB73913285611B900EF868F /* Constants.swift */,
 			);
 			path = helper;
+			sourceTree = "<group>";
+		};
+		9BFE67B128593936002FEE00 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE67B228593941002FEE00 /* Slide.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		9BFE67B428593CFA002FEE00 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				9BFE67B528593D2B002FEE00 /* OnboardingCollectionViewCell.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +205,8 @@
 				9B27C9792858D99D0005ABF2 /* OnboardingViewController.swift in Sources */,
 				9BB738FC2855058A00EF868F /* SceneDelegate.swift in Sources */,
 				9BB7390F28550BB000EF868F /* LoadingViewController.swift in Sources */,
+				9BFE67B328593941002FEE00 /* Slide.swift in Sources */,
+				9BFE67B628593D2B002FEE00 /* OnboardingCollectionViewCell.swift in Sources */,
 				9BB739122856106100EF868F /* Helper.swift in Sources */,
 				9B27C974285616980005ABF2 /* SettingsViewController.swift in Sources */,
 			);
