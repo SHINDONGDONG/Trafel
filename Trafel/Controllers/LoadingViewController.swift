@@ -10,7 +10,7 @@ import UIKit
 class LoadingViewController: UIViewController {
  
     // MARK: - Properties
-    private var isUserLoggedIn = true 
+    private var isUserLoggedIn = false
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -36,13 +36,7 @@ class LoadingViewController: UIViewController {
          //user가 로그인 안 되어있으면 ==> onboarding 화면으로 이동
         
         if isUserLoggedIn {
-            //MainTabBarController를 만들어준다.
-            let mainTabBarController = UIStoryboard(name: K.StoryboardID.main, bundle: nil).instantiateViewController(identifier:K.StoryboardID.mainTabBarController)
-            
-            if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
-                let window = sceneDelegate.window {
-                window.rootViewController = mainTabBarController
-            }
+            PresenterManger.shared.show(vc: .mainTabBarController)
             
         }else {
             //지정해둔 identifier를 이용해서 화면을보내준다.

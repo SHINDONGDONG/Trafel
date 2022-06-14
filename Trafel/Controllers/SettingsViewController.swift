@@ -28,17 +28,7 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
-        //onbarding 정보를 넣어준다.
-        let onboardingViewController = UIStoryboard(name: K.StoryboardID.main, bundle: nil).instantiateViewController(withIdentifier: K.StoryboardID.onboardingViewController)
-        
-        //sceneDelegate로 이동시켜준다.
-        if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate,
-           let window = sceneDelegate.window {
-            window.rootViewController = onboardingViewController
-            
-            //UIView 트랜지션으로 애니메이션을 추가시켜준다.
-            UIView.transition(with: window, duration: 0.25, options: .transitionCrossDissolve, animations: nil, completion: nil)
-        }
+        PresenterManger.shared.show(vc: .onboarding)
         
     }
 }
