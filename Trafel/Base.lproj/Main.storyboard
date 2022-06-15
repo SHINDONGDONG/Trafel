@@ -187,9 +187,12 @@
                                     <segment title="Login"/>
                                     <segment title="Sign Up"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="Qz8-pn-VKv" eventType="valueChanged" id="sPx-BU-4JR"/>
+                                </connections>
                             </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3kP-N9-QwJ">
-                                <rect key="frame" x="48" y="115" width="318" height="420.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3kP-N9-QwJ">
+                                <rect key="frame" x="48" y="115" width="318" height="426.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J8h-WT-klo">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="56"/>
@@ -200,7 +203,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZaX-KG-HSA">
-                                        <rect key="frame" x="0.0" y="71" width="318" height="56"/>
+                                        <rect key="frame" x="0.0" y="72" width="318" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="2jJ-NF-3dk"/>
                                         </constraints>
@@ -208,7 +211,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password confirmation" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8B-TF-VUM">
-                                        <rect key="frame" x="0.0" y="142" width="318" height="56"/>
+                                        <rect key="frame" x="0.0" y="144" width="318" height="56"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="Cx4-YU-ILj"/>
                                         </constraints>
@@ -216,19 +219,22 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your credentials are incorrect." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mh5-Fw-pGh">
-                                        <rect key="frame" x="0.0" y="213" width="318" height="16.5"/>
+                                        <rect key="frame" x="0.0" y="216" width="318" height="16.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-na-2zT">
-                                        <rect key="frame" x="0.0" y="244.5" width="318" height="34"/>
+                                        <rect key="frame" x="0.0" y="248.5" width="318" height="34"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forget password?"/>
+                                        <connections>
+                                            <action selector="forgetPasswordButtonTapped:" destination="Qz8-pn-VKv" eventType="touchUpInside" id="ysc-Mv-pnl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-fb-nje">
-                                        <rect key="frame" x="0.0" y="293.5" width="318" height="56"/>
+                                        <rect key="frame" x="0.0" y="298.5" width="318" height="56"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="OIl-t2-i16"/>
@@ -240,7 +246,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWu-Fy-ceM">
-                                        <rect key="frame" x="0.0" y="364.5" width="318" height="56"/>
+                                        <rect key="frame" x="0.0" y="370.5" width="318" height="56"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="56" id="TZY-Q9-ETK"/>
@@ -259,7 +265,7 @@
                         <constraints>
                             <constraint firstItem="fV7-J8-ENY" firstAttribute="trailing" secondItem="3kP-N9-QwJ" secondAttribute="trailing" constant="48" id="Gwi-J3-uNT"/>
                             <constraint firstItem="3kP-N9-QwJ" firstAttribute="leading" secondItem="fV7-J8-ENY" secondAttribute="leading" constant="48" id="Lek-pR-wGD"/>
-                            <constraint firstItem="zcN-zA-Ffj" firstAttribute="top" secondItem="fV7-J8-ENY" secondAttribute="top" constant="16" id="Ubb-5l-WDl"/>
+                            <constraint firstItem="zcN-zA-Ffj" firstAttribute="top" secondItem="dYX-oA-cI4" secondAttribute="top" constant="52" id="Ubb-5l-WDl"/>
                             <constraint firstItem="dYX-oA-cI4" firstAttribute="centerX" secondItem="EbH-Lg-z4d" secondAttribute="centerX" id="X7M-q9-tEf"/>
                             <constraint firstItem="dYX-oA-cI4" firstAttribute="top" secondItem="EbH-Lg-z4d" secondAttribute="top" constant="8" id="emN-0R-ehT"/>
                             <constraint firstItem="zcN-zA-Ffj" firstAttribute="centerX" secondItem="EbH-Lg-z4d" secondAttribute="centerX" id="fQb-Dz-DO7"/>
@@ -267,6 +273,16 @@
                             <constraint firstItem="dYX-oA-cI4" firstAttribute="centerX" secondItem="EbH-Lg-z4d" secondAttribute="centerX" id="j4C-dY-AjZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="J8h-WT-klo" id="gGT-H2-JX2"/>
+                        <outlet property="errorLabel" destination="mh5-Fw-pGh" id="lUH-4y-qWu"/>
+                        <outlet property="forgetPasswordButton" destination="ZJd-na-2zT" id="A9X-dE-YpM"/>
+                        <outlet property="loginButton" destination="KWu-Fy-ceM" id="axJ-6w-bWd"/>
+                        <outlet property="passwordConfiramtionTextField" destination="w8B-TF-VUM" id="fU0-k4-vJ2"/>
+                        <outlet property="passwordTextField" destination="ZaX-KG-HSA" id="pv2-hV-2kL"/>
+                        <outlet property="segmentedControl" destination="zcN-zA-Ffj" id="z9w-7q-4PN"/>
+                        <outlet property="signUpButton" destination="n3Y-fb-nje" id="V9v-l4-vGq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBW-vd-N7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
