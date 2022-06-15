@@ -26,8 +26,13 @@ class OnboardingViewController: UIViewController {
     private func configures() {
         setupViews()
         setupCollectionView()
+        setupPageControl()
     }
     
+    private func setupPageControl(){
+        pageControl.numberOfPages = Slide.collection.count
+    }
+
     private func setupViews() {
         view.backgroundColor = .systemGroupedBackground
     }
