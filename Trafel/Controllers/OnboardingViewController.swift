@@ -11,6 +11,10 @@ class OnboardingViewController: UIViewController {
 
     // MARK: - Properties
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -25,6 +29,13 @@ class OnboardingViewController: UIViewController {
     }
     
     private func setupViews() {
+        view.backgroundColor = .systemGroupedBackground
+    }
+    
+    private func showCaption(atIndex index: Int) {
+        let slide = Slide.collection[index]
+        titleLabel.text = slide.title
+        descriptionLabel.text = slide.description
     }
     
     private func setupCollectionView() {
@@ -65,5 +76,10 @@ extension OnboardingViewController:UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-    
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let index = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
+        showCaption(atIndex: index)
+        self.pageControl.currentPage = index
+    }
 }

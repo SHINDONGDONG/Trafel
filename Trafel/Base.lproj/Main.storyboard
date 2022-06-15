@@ -55,7 +55,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Uu-0Q-eQT">
-                                <rect key="frame" x="24" y="758" width="366" height="56"/>
+                                <rect key="frame" x="36" y="758" width="342" height="56"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="X1e-Be-6TJ"/>
@@ -145,9 +145,9 @@
                             <constraint firstItem="XHY-14-KJR" firstAttribute="leading" secondItem="KME-Ny-15X" secondAttribute="leading" constant="24" id="Gne-T6-HBM"/>
                             <constraint firstItem="e6k-u4-iwq" firstAttribute="leading" secondItem="KME-Ny-15X" secondAttribute="leading" id="Nf9-Pn-K3s"/>
                             <constraint firstItem="gfz-av-nPj" firstAttribute="centerX" secondItem="d3r-wn-sgL" secondAttribute="centerX" id="OrS-oH-Hr1"/>
-                            <constraint firstItem="2Uu-0Q-eQT" firstAttribute="leading" secondItem="KME-Ny-15X" secondAttribute="leading" constant="24" id="aiW-rw-KaK"/>
+                            <constraint firstItem="2Uu-0Q-eQT" firstAttribute="leading" secondItem="KME-Ny-15X" secondAttribute="leading" constant="36" id="aiW-rw-KaK"/>
                             <constraint firstItem="e6k-u4-iwq" firstAttribute="top" secondItem="d3r-wn-sgL" secondAttribute="top" id="gdp-Q4-XY0"/>
-                            <constraint firstItem="KME-Ny-15X" firstAttribute="trailing" secondItem="2Uu-0Q-eQT" secondAttribute="trailing" constant="24" id="jL6-qR-F3P"/>
+                            <constraint firstItem="KME-Ny-15X" firstAttribute="trailing" secondItem="2Uu-0Q-eQT" secondAttribute="trailing" constant="36" id="jL6-qR-F3P"/>
                             <constraint firstItem="KME-Ny-15X" firstAttribute="bottom" secondItem="2Uu-0Q-eQT" secondAttribute="bottom" constant="48" id="jpm-RA-8z1"/>
                             <constraint firstItem="e6k-u4-iwq" firstAttribute="trailing" secondItem="KME-Ny-15X" secondAttribute="trailing" id="xBu-hI-waZ"/>
                             <constraint firstItem="XHY-14-KJR" firstAttribute="top" secondItem="gfz-av-nPj" secondAttribute="bottom" constant="24" id="z8c-7f-wFM"/>
@@ -156,6 +156,9 @@
                     <navigationItem key="navigationItem" id="why-U3-FtH"/>
                     <connections>
                         <outlet property="collectionView" destination="e6k-u4-iwq" id="hba-s3-gck"/>
+                        <outlet property="descriptionLabel" destination="Nz2-cQ-v9u" id="fVN-M1-Dji"/>
+                        <outlet property="pageControl" destination="gfz-av-nPj" id="Srq-ax-tUK"/>
+                        <outlet property="titleLabel" destination="pWW-DP-EpF" id="q39-Fp-2ac"/>
                         <segue destination="Qz8-pn-VKv" kind="showDetail" identifier="showLoginSignUp" id="03Q-fa-Rbe"/>
                     </connections>
                 </viewController>
