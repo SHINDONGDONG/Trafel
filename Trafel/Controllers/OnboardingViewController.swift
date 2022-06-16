@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol OnboardingDelegate:AnyObject {
+    func showMainTabBarController()
+}
+
 class OnboardingViewController: UIViewController {
+    
 
     // MARK: - Properties
     @IBOutlet weak var collectionView: UICollectionView!
@@ -56,6 +61,14 @@ class OnboardingViewController: UIViewController {
         performSegue(withIdentifier: K.Segue.showLoginSignUpScreen, sender: nil)
     }
     
+    //prepare 세그웨이 참조만들기 segue웨이의 identfier가 showLoginSignup이라면
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.Segue.showLoginSignUpScreen {
+            if let destination = segue.destination as? LoginViewController  {
+                destination.delegate = self
+            }
+        }
+    }
 
 }
 
@@ -88,3 +101,15 @@ extension OnboardingViewController:UICollectionViewDelegate, UICollectionViewDat
         self.pageControl.currentPage = index
     }
 }
+
+extension OnboardingViewController:OnboardingDelegate {
+    func showMainTabBarController() {
+        //가장 최상위 viewcontroller를 뜻한다.
+        if let loginViewController = self.presentedViewController as? LoginViewController {
+            loginViewController.dismiss(animated: true)
+            PresenterManger.shared.show(vc: .mainTabBarController)
+        }
+    }
+    
+    
+} 

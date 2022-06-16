@@ -9,6 +9,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    weak var delegate :OnboardingDelegate?
+    
+    private let isSuccessfulLogin = true
+    
     // MARK: - Properties
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var emailTextField: UITextField!
@@ -49,6 +53,17 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func forgetPasswordButtonTapped(_ sender: Any) {
+    }
+    
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+    }
+    @IBAction func loginButtonTapped(_ sender: Any) {
+        
+        if isSuccessfulLogin {
+            delegate?.showMainTabBarController()
+        }else {
+            
+        }
     }
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
