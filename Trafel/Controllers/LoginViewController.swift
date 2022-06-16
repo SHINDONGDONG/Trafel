@@ -9,9 +9,15 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    private var errorMessage: String? {
+        didSet {
+            showErrorMessageIfNeeded(text: errorMessage)
+        }
+    }
+    
     weak var delegate :OnboardingDelegate?
     
-    private let isSuccessfulLogin = true
+    private let isSuccessfulLogin = false
     
     // MARK: - Properties
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -27,6 +33,7 @@ class LoginViewController: UIViewController {
         case login
         case signUp
     }
+    
     
     private var currentPageType: pageType = .login {
         didSet {
@@ -44,13 +51,20 @@ class LoginViewController: UIViewController {
     // MARK: - Configures
     
     private func setupViewFor(pagetype : pageType) {
-        errorLabel.text = ""
+//        errorLabel.text = ""
+        errorMessage = nil
         passwordConfiramtionTextField.isHidden = pagetype == .login
         signUpButton.isHidden = pagetype == .login
         forgetPasswordButton.isHidden = pagetype == .signUp
         loginButton.isHidden = pagetype == .signUp
         
     }
+    
+    private func showErrorMessageIfNeeded(text: String?) {
+        errorLabel.isHidden = text == nil
+        errorLabel.text = text
+    }
+    
 
     @IBAction func forgetPasswordButtonTapped(_ sender: Any) {
     }
@@ -62,9 +76,10 @@ class LoginViewController: UIViewController {
         if isSuccessfulLogin {
             delegate?.showMainTabBarController()
         }else {
-            
+            errorMessage = "Your Password is invalid. Plase try again."
         }
     }
+    
     
     @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
         currentPageType = sender.selectedSegmentIndex == 0 ? .login : .signUp
