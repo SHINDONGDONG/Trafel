@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -316,7 +317,7 @@
             </objects>
             <point key="canvasLocation" x="1805.7971014492755" y="466.74107142857139"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="sgC-ND-Au0">
             <objects>
                 <viewController id="y4H-7y-o8E" sceneMemberID="viewController">
@@ -326,7 +327,9 @@
                         <viewLayoutGuide key="safeArea" id="SSh-JO-wtL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="SPC-iL-xsx"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="SPC-iL-xsx">
+                        <imageReference key="image" image="house.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awT-Ce-jiq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -350,11 +353,13 @@
             </objects>
             <point key="canvasLocation" x="68" y="106"/>
         </scene>
-        <!--Item 2-->
+        <!--Settings-->
         <scene sceneID="3c6-cb-f98">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0gr-7i-cE7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="02H-5Q-ZUb"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="02H-5Q-ZUb">
+                        <imageReference key="image" image="gearshape.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JzJ-e7-hSd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -371,6 +376,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="icEqual" width="512" height="512"/>
         <image name="imBalloon" width="512" height="512"/>
         <namedColor name="AccentColor">
