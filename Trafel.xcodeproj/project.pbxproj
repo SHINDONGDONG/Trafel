@@ -21,9 +21,12 @@
 		9BB73914285611B900EF868F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB73913285611B900EF868F /* Constants.swift */; };
 		9BFE67B328593941002FEE00 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE67B228593941002FEE00 /* Slide.swift */; };
 		9BFE67B628593D2B002FEE00 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFE67B528593D2B002FEE00 /* OnboardingCollectionViewCell.swift */; };
+		CFF972D5E7CDD5050C4A0695 /* Pods_Trafel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A8C60EAD504B82A71F156F /* Pods_Trafel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E57C88DA2ADDB71F94DEB52 /* Pods-Trafel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trafel.release.xcconfig"; path = "Target Support Files/Pods-Trafel/Pods-Trafel.release.xcconfig"; sourceTree = "<group>"; };
+		72F521B07CCDC3EEA6FE7988 /* Pods-Trafel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trafel.debug.xcconfig"; path = "Target Support Files/Pods-Trafel/Pods-Trafel.debug.xcconfig"; sourceTree = "<group>"; };
 		9B27C973285616980005ABF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9B27C9762858CE510005ABF2 /* PresenterManger .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresenterManger .swift"; sourceTree = "<group>"; };
 		9B27C9782858D99D0005ABF2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		9BB73913285611B900EF868F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9BFE67B228593941002FEE00 /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		9BFE67B528593D2B002FEE00 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		B0A8C60EAD504B82A71F156F /* Pods_Trafel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trafel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,12 +51,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF972D5E7CDD5050C4A0695 /* Pods_Trafel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38193F8534B3B0A5EA2B647B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				72F521B07CCDC3EEA6FE7988 /* Pods-Trafel.debug.xcconfig */,
+				1E57C88DA2ADDB71F94DEB52 /* Pods-Trafel.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9B27C9752858CE380005ABF2 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +81,8 @@
 			children = (
 				9BB738F82855058A00EF868F /* Trafel */,
 				9BB738F72855058A00EF868F /* Products */,
+				38193F8534B3B0A5EA2B647B /* Pods */,
+				A3579775E1ADCD6E55E03110 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +148,14 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		A3579775E1ADCD6E55E03110 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B0A8C60EAD504B82A71F156F /* Pods_Trafel.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BB7390A2855058E00EF868F /* Build configuration list for PBXNativeTarget "Trafel" */;
 			buildPhases = (
+				E8E89EA9464AA4FF30231688 /* [CP] Check Pods Manifest.lock */,
 				9BB738F22855058A00EF868F /* Sources */,
 				9BB738F32855058A00EF868F /* Frameworks */,
 				9BB738F42855058A00EF868F /* Resources */,
+				B7FBAC05FCB1FAACAA9F5C30 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +223,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B7FBAC05FCB1FAACAA9F5C30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trafel/Pods-Trafel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Trafel/Pods-Trafel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Trafel/Pods-Trafel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8E89EA9464AA4FF30231688 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Trafel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9BB738F22855058A00EF868F /* Sources */ = {
@@ -354,6 +423,7 @@
 		};
 		9BB7390B2855058E00EF868F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72F521B07CCDC3EEA6FE7988 /* Pods-Trafel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -382,6 +452,7 @@
 		};
 		9BB7390C2855058E00EF868F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E57C88DA2ADDB71F94DEB52 /* Pods-Trafel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
