@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     weak var delegate :OnboardingDelegate?
     
-    private let isSuccessfulLogin = false
+    private let isSuccessfulLogin = true
     
     // MARK: - Properties
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -74,11 +74,21 @@ class LoginViewController: UIViewController {
     }
     @IBAction func loginButtonTapped(_ sender: Any) {
         
-        if isSuccessfulLogin {
-            delegate?.showMainTabBarController()
-        }else {
-            errorMessage = "Your Password is invalid. Plase try again."
+        //progress를 표시한다.
+        MBProgressHUD.showAdded(to: view, animated: true)
+        
+        delay(durationInSeconds: 2.0) {
+            //progress를 숨긴다.
+            MBProgressHUD.hide(for: self.view, animated: true)
+            
+            if self.isSuccessfulLogin {
+                self.delegate?.showMainTabBarController()
+            }else {
+                self.errorMessage = "Your Password is invalid. Plase try again."
+            }
+            
         }
+
     }
     
     
