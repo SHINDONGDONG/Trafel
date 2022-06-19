@@ -78,16 +78,28 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        let email = "kelvin@naver.com"
-        let password = "123456"
         
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+        //정보 유효성 확인 빈곳이 있는지 없는지
+        guard let email = emailTextField.text, !email.isEmpty,
+        let password = passwordTextField.text, !password.isEmpty,
+        let passwordConfiramtion = passwordConfiramtionTextField.text, !passwordConfiramtion.isEmpty
+        else {
+            showErrorMessageIfNeeded(text: "Invaild From")
+            return
+        }
+        //패스워드 유효성 확인.
+        guard password == passwordConfiramtion else {
+            showErrorMessageIfNeeded(text: "Password are incorrect")
+            return
+        }
+        //create User
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
             if let error = error {
-                print("email : \(error.localizedDescription)")
+                self?.showErrorMessageIfNeeded(text: error.localizedDescription)
             }else {
                 print("Success : \(result?.user.uid)")
             }
-            
+
         }
     }
 
