@@ -7,6 +7,8 @@
 
 import UIKit
 import MBProgressHUD
+import FirebaseAuth
+
 
 class LoginViewController: UIViewController {
 
@@ -76,7 +78,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
+        let email = "kelvin@naver.com"
+        let password = "123456"
+        
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("email : \(error.localizedDescription)")
+            }else {
+                print("Success : \(result?.user.uid)")
+            }
+            
+        }
     }
+
     @IBAction func loginButtonTapped(_ sender: Any) {
         //editing을 종료한다
         view.endEditing(true)
