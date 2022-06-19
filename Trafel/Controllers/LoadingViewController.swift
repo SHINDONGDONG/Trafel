@@ -40,7 +40,7 @@ class LoadingViewController: UIViewController {
             
         }else {
             //지정해둔 identifier를 이용해서 화면을보내준다.
-            performSegue(withIdentifier: K.Segue.showOnboardingScreen, sender: nil)
+            performSegue(withIdentifier: K.Segue.showOnboarding, sender: nil)
         }
          
     }

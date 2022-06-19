@@ -21,11 +21,11 @@ class SettingsViewController: UIViewController {
 
     // MARK: - Configures
     private func configures(){
-        setupView()
+        setupNavigationbar()
     }
     
-    private func setupView(){
-        view.backgroundColor = .systemGray
+    private func setupNavigationbar() {
+        title = K.NavigationTitle.settings
     }
 
     @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {

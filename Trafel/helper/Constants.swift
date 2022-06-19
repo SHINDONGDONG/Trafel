@@ -7,10 +7,22 @@
 
 import Foundation
 
+
+
 struct K {
+    
+    struct ReuseIdentifier {
+        static let onboardingCollectionViewCell = "onboardingCollectionViewCell"
+    }
+    
+    struct NavigationTitle {
+        static let settings = "Settings"
+        static let home = "Home"
+    }
+    
     struct Segue {
-        static let showOnboardingScreen = "showOnboarding"
-        static let showLoginSignUpScreen = "showLoginSignUp"
+        static let showOnboarding = "showOnboarding"
+        static let showLoginSignUp = "showLoginSignUp"
     }
     
     struct StoryboardID {

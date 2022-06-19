@@ -10,6 +10,7 @@
 		9B27C974285616980005ABF2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27C973285616980005ABF2 /* SettingsViewController.swift */; };
 		9B27C9772858CE510005ABF2 /* PresenterManger .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27C9762858CE510005ABF2 /* PresenterManger .swift */; };
 		9B27C9792858D99D0005ABF2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27C9782858D99D0005ABF2 /* OnboardingViewController.swift */; };
+		9B3419E2285F5AD40086EF61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3419E1285F5AD40086EF61 /* HomeViewController.swift */; };
 		9B65CD88285A2F16008C0C97 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65CD87285A2F16008C0C97 /* LoginViewController.swift */; };
 		9BB738FA2855058A00EF868F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB738F92855058A00EF868F /* AppDelegate.swift */; };
 		9BB738FC2855058A00EF868F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB738FB2855058A00EF868F /* SceneDelegate.swift */; };
@@ -30,6 +31,7 @@
 		9B27C973285616980005ABF2 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9B27C9762858CE510005ABF2 /* PresenterManger .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresenterManger .swift"; sourceTree = "<group>"; };
 		9B27C9782858D99D0005ABF2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		9B3419E1285F5AD40086EF61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9B65CD87285A2F16008C0C97 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9BB738F62855058A00EF868F /* Trafel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trafel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB738F92855058A00EF868F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +66,6 @@
 				72F521B07CCDC3EEA6FE7988 /* Pods-Trafel.debug.xcconfig */,
 				1E57C88DA2ADDB71F94DEB52 /* Pods-Trafel.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -115,6 +116,7 @@
 		9BB7390D28550B9000EF868F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9B3419E1285F5AD40086EF61 /* HomeViewController.swift */,
 				9BB7390E28550BB000EF868F /* LoadingViewController.swift */,
 				9B27C973285616980005ABF2 /* SettingsViewController.swift */,
 				9B27C9782858D99D0005ABF2 /* OnboardingViewController.swift */,
@@ -282,6 +284,7 @@
 				9BB739122856106100EF868F /* Helper.swift in Sources */,
 				9B27C974285616980005ABF2 /* SettingsViewController.swift in Sources */,
 				9B65CD88285A2F16008C0C97 /* LoginViewController.swift in Sources */,
+				9B3419E2285F5AD40086EF61 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
