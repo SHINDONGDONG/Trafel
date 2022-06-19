@@ -78,6 +78,8 @@ class LoginViewController: UIViewController {
     @IBAction func signUpButtonTapped(_ sender: Any) {
     }
     @IBAction func loginButtonTapped(_ sender: Any) {
+        //editing을 종료한다
+        view.endEditing(true)
         
         //progress를 표시한다.
         MBProgressHUD.showAdded(to: view, animated: true)

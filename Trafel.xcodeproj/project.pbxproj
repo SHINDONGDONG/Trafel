@@ -11,6 +11,7 @@
 		9B27C9772858CE510005ABF2 /* PresenterManger .swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27C9762858CE510005ABF2 /* PresenterManger .swift */; };
 		9B27C9792858D99D0005ABF2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B27C9782858D99D0005ABF2 /* OnboardingViewController.swift */; };
 		9B3419E2285F5AD40086EF61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3419E1285F5AD40086EF61 /* HomeViewController.swift */; };
+		9B3419E4285F63D10086EF61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B3419E3285F63D10086EF61 /* GoogleService-Info.plist */; };
 		9B65CD88285A2F16008C0C97 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B65CD87285A2F16008C0C97 /* LoginViewController.swift */; };
 		9BB738FA2855058A00EF868F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB738F92855058A00EF868F /* AppDelegate.swift */; };
 		9BB738FC2855058A00EF868F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB738FB2855058A00EF868F /* SceneDelegate.swift */; };
@@ -32,6 +33,7 @@
 		9B27C9762858CE510005ABF2 /* PresenterManger .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresenterManger .swift"; sourceTree = "<group>"; };
 		9B27C9782858D99D0005ABF2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9B3419E1285F5AD40086EF61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9B3419E3285F63D10086EF61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9B65CD87285A2F16008C0C97 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9BB738F62855058A00EF868F /* Trafel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trafel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB738F92855058A00EF868F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				9BB738FF2855058A00EF868F /* Main.storyboard */,
 				9BB739022855058E00EF868F /* Assets.xcassets */,
 				9BB739042855058E00EF868F /* LaunchScreen.storyboard */,
+				9B3419E3285F63D10086EF61 /* GoogleService-Info.plist */,
 				9BB739072855058E00EF868F /* Info.plist */,
 			);
 			path = Trafel;
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BB739062855058E00EF868F /* LaunchScreen.storyboard in Resources */,
+				9B3419E4285F63D10086EF61 /* GoogleService-Info.plist in Resources */,
 				9BB739032855058E00EF868F /* Assets.xcassets in Resources */,
 				9BB739012855058A00EF868F /* Main.storyboard in Resources */,
 			);
