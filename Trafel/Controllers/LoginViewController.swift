@@ -20,7 +20,8 @@ class LoginViewController: UIViewController {
     
     weak var delegate :OnboardingDelegate?
     
-    private let isSuccessfulLogin = true
+    //firebase를 사용하고 있으니 이제 필요없음
+//    private let isSuccessfulLogin = true
     
     // MARK: - Properties
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -116,21 +117,46 @@ class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         //editing을 종료한다
         view.endEditing(true)
-        
+        //텍스트필드에 입력된 email, password를 담아준다.
+        guard let email = emailTextField.text,
+                !email.isEmpty,
+              let password = passwordTextField.text,
+                !password.isEmpty else {
+            showErrorMessageIfNeeded(text: "Invaild")
+            return
+        }
         //progress를 표시한다.
         MBProgressHUD.showAdded(to: view, animated: true)
         
-        delay(durationInSeconds: 2.0) {
-            //progress를 숨긴다.
-            MBProgressHUD.hide(for: self.view, animated: true)
-            
-            if self.isSuccessfulLogin {
-                self.delegate?.showMainTabBarController()
-            }else {
-                self.errorMessage = "Your Password is invalid. Plase try again."
+        //firebase인증 절차를 거친 후 로그인을 시도한다.
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self ] (result, error) in
+            guard let this = self else { return }
+            //progress를 끈다.
+            MBProgressHUD.hide(for: this.view, animated: true)
+            //error일경우 errormeassge에 error내용을 표시해주고
+            if let error = error {
+                this.showErrorMessageIfNeeded(text: error.localizedDescription)
+                //result일경우 tabbarcotnroller로 넘긴다.
+            } else if let _ = result?.user.uid {
+                this.delegate?.showMainTabBarController()
             }
-            
         }
+        
+        
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+//          guard let strongSelf = self else { return }
+//        }
+//        delay(durationInSeconds: 2.0) {
+//            //progress를 숨긴다.
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//
+//            if self.isSuccessfulLogin {
+//                self.delegate?.showMainTabBarController()
+//            }else {
+//                self.errorMessage = "Your Password is invalid. Plase try again."
+//            }
+//
+//        }
 
     }
     

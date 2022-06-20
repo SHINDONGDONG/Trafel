@@ -7,6 +7,8 @@
 
 import UIKit
 import MBProgressHUD
+import FirebaseAuth
+
 
 class SettingsViewController: UIViewController {
 
@@ -29,10 +31,20 @@ class SettingsViewController: UIViewController {
     }
 
     @IBAction func logoutButtonTapped(_ sender: UIBarButtonItem) {
+        //progress를 보여주고
         MBProgressHUD.showAdded(to: view, animated: true)
+        //딜레이 0.5동안 progress가 돌아간다.
         delay(durationInSeconds: 0.5) {
-            MBProgressHUD.hide(for: self.view, animated: true)
-            PresenterManger.shared.show(vc: .onboarding)
+            do {
+                //지금 로그인되어있는 auth를 signOut시켜주고
+                try Auth.auth().signOut()
+                //onboarding으로 이동시켜준다.
+                PresenterManger.shared.show(vc: .onboarding)
+            } catch {
+                print(error.localizedDescription)
+                //error일경우 progress를 멈춰준다.
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
         }
         
     }
