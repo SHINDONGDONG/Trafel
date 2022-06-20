@@ -92,12 +92,22 @@ class LoginViewController: UIViewController {
             showErrorMessageIfNeeded(text: "Password are incorrect")
             return
         }
+        
+        //progress
+        MBProgressHUD.showAdded(to: view, animated: true)
+
         //create User
         Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+            //self의 optinal
+            guard let this = self else { return }
+        
+            MBProgressHUD.hide(for: this.view, animated: true)
             if let error = error {
                 self?.showErrorMessageIfNeeded(text: error.localizedDescription)
-            }else {
-                print("Success : \(result?.user.uid)")
+                //userid가 만들어진다면 userid를 넣어주고 maintabbarcontroller에 보내준다,.
+            }else if let userId = result?.user.uid {
+                this.delegate?.showMainTabBarController()
+                print("userid created : \(userId)")
             }
 
         }
