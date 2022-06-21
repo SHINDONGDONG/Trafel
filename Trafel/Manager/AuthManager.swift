@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseAuth
+import MBProgressHUD
+
 
 struct AuthManager {
     //Auth.auth()를 만들어놓는다.
@@ -31,13 +33,23 @@ struct AuthManager {
     
     func loginUser(withEmail email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
         auth.signIn(withEmail: email, password: password) { result, error in
-            if let error = error { 
+            if let error = error {
                 completion(.failure(error))
             } else if let user = result?.user {
                 completion(.success(user))
             } else {
                 completion(.failure(AuthError.unkownError))
             }
+        }
+    }
+    
+    func logoutUser() -> Result<Void,Error> {
+        //데이터를 넘길것이 없으므로 void로 해준다.
+        do {
+            try auth.signOut()
+            return .success(())
+        } catch(let error) {
+            return .failure(error)
         }
     }
     
