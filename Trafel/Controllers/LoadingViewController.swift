@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 class LoadingViewController: UIViewController {
  
     // MARK: - Properties
-    private var isUserLoggedIn = false
+    private var isUserLoggedIn: Bool {
+        return Auth.auth().currentUser != nil
+    }
     
     // MARK: - Init
     override func viewDidLoad() {

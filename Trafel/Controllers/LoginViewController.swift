@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
+    let authManager = AuthManager()
+    
     private var errorMessage: String? {
         didSet {
             showErrorMessageIfNeeded(text: errorMessage)
@@ -127,21 +129,44 @@ class LoginViewController: UIViewController {
         }
         //progress를 표시한다.
         MBProgressHUD.showAdded(to: view, animated: true)
-        
-        //firebase인증 절차를 거친 후 로그인을 시도한다.
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self ] (result, error) in
+
+        authManager.loginUser(withEmail: email, password: password) { [weak self] result in
             guard let this = self else { return }
-            //progress를 끈다.
             MBProgressHUD.hide(for: this.view, animated: true)
-            //error일경우 errormeassge에 error내용을 표시해주고
-            if let error = error {
+            switch result {
+            case .failure(let error):
                 this.showErrorMessageIfNeeded(text: error.localizedDescription)
-                //result일경우 tabbarcotnroller로 넘긴다.
-            } else if let _ = result?.user.uid {
+            case .success:
                 this.delegate?.showMainTabBarController()
             }
         }
         
+
+//        authManager.signUpNewUser(withEmail: email, password: password) { [weak self] result in
+//            guard let this = self else { return }
+//            MBProgressHUD.hide(for: this.view, animated: true)
+//            switch result {
+//            case .success:
+//                this.delegate?.showMainTabBarController()
+//            case .failure(let error):
+//                this.showErrorMessageIfNeeded(text: error.localizedDescription)
+//            }
+//        }
+        
+        //firebase인증 절차를 거친 후 로그인을 시도한다.
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self ] (result, error) in
+//            guard let this = self else { return }
+//            //progress를 끈다.
+//            MBProgressHUD.hide(for: this.view, animated: true)
+//            //error일경우 errormeassge에 error내용을 표시해주고
+//            if let error = error {
+//                this.showErrorMessageIfNeeded(text: error.localizedDescription)
+//                //result일경우 tabbarcotnroller로 넘긴다.
+//            } else if let _ = result?.user.uid {
+//                this.delegate?.showMainTabBarController()
+//            }
+//        }
+//
         
 //        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
 //          guard let strongSelf = self else { return }
