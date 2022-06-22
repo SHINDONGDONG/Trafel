@@ -8,6 +8,7 @@
 import UIKit
 import MBProgressHUD
 import FirebaseAuth
+import Loaf
 
 
 class LoginViewController: UIViewController {
@@ -78,6 +79,40 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func forgetPasswordButtonTapped(_ sender: Any) {
+        //경고 컨트롤러를 구현하기
+        let alertController = UIAlertController(title: "Forget password", message: "Plese enter your email", preferredStyle: .alert)
+        //alert이 나왔을 때 텍스트필드를 만들어준다.
+        alertController.addTextField(configurationHandler: nil)
+        //alert의 ok버튼을 누르면 나오는action 설정
+        let okAlertAction = UIAlertAction(title: "OK", style: .default) { [ weak self ] _ in
+            guard let this = self else { return }
+            //textField에 alertcontroller에 들어오는 텍스트를 넣는다 그것이 email이고 email은 비어있으면 동작하지않는다.
+            if let textField = alertController.textFields?.first, let email = textField.text, !email.isEmpty {
+                this.authManager.resetPassword(withEmail: email) { (result) in
+                    switch result {
+                    case .failure(let error):
+                        Loaf(error.localizedDescription, state: .error, location: .bottom,sender: this).show()
+                    case .success:
+                        this.showAlert(title: "Password ResetSucessful", message: "Plase check your email")
+                    }
+                }
+            }
+        }
+        //alert의 cancel을 누르면 동작하는 버튼
+        let cancelAlertAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //alertcontroller에 ok와 cancel을 추가시켜준다.
+        alertController.addAction(cancelAlertAction)
+        alertController.addAction(okAlertAction)
+        //present형식으로 띄워야지 alert이 나온다.
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    private func showAlert(title: String, message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {

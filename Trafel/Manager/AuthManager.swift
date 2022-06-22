@@ -42,6 +42,20 @@ struct AuthManager {
             }
         }
     }
+
+    //Password를 email로 찾는 메서드
+    func resetPassword(withEmail email: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        auth.sendPasswordReset(withEmail: email) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(()))
+            }
+        }
+//        Auth.auth().sendPasswordReset(withEmail: email) { error in
+//          // ...
+//        }
+    }
     
     func logoutUser() -> Result<Void,Error> {
         //데이터를 넘길것이 없으므로 void로 해준다.
