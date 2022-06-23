@@ -12,9 +12,11 @@ import FirebaseAuth
 class LoadingViewController: UIViewController {
  
     // MARK: - Properties
-    private var isUserLoggedIn: Bool {
-        return Auth.auth().currentUser != nil
-    }
+//    private var isUserLoggedIn: Bool {
+//        return Auth.auth().currentUser != nil
+//    }
+    
+    private let authManager = AuthManager()
     
     // MARK: - Init
     override func viewDidLoad() {
@@ -39,7 +41,7 @@ class LoadingViewController: UIViewController {
          //user가 로그인 되어있으면 ==> main tab bar로 이동
          //user가 로그인 안 되어있으면 ==> onboarding 화면으로 이동
         
-        if isUserLoggedIn {
+        if authManager.isUserLogged() {
             PresenterManger.shared.show(vc: .mainTabBarController)
             
         }else {

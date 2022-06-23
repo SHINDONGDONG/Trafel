@@ -17,6 +17,11 @@ struct AuthManager {
     enum AuthError: Error {
         case unkownError
     }
+   
+     func isUserLogged() -> Bool {
+        return auth.currentUser != nil
+    }
+    
     //Signup할 때 의 auth인증을 한다. //email, password 가 인자로온다.
     func signUpNewUser(withEmail email:String, password:String, completion: @escaping (Result<User, Error>) -> Void ) {
         //firebase의 createuser로 유저를 생성한다.
